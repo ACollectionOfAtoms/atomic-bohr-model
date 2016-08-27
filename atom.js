@@ -1,5 +1,6 @@
-class Atom {
-  constructor(numElectrons) {
+export default class {
+  constructor(containerEle, numElectrons) {
+    this.containerEle = containerEle
     this.numElectrons = numElectrons
   }
   addElectrons(num) {
