@@ -1,0 +1,1329 @@
+{
+    "1": {
+        "atomic_symbol": "H", 
+        "electron_config": [
+            1
+        ], 
+        "element_name": "Hydrogen"
+    }, 
+    "2": {
+        "atomic_symbol": "He", 
+        "electron_config": [
+            2
+        ], 
+        "element_name": "Helium"
+    }, 
+    "3": {
+        "atomic_symbol": "Li", 
+        "electron_config": [
+            2, 
+            1
+        ], 
+        "element_name": "Lithium"
+    }, 
+    "4": {
+        "atomic_symbol": "Be", 
+        "electron_config": [
+            2, 
+            2
+        ], 
+        "element_name": "Beryllium"
+    }, 
+    "5": {
+        "atomic_symbol": "B", 
+        "electron_config": [
+            2, 
+            3
+        ], 
+        "element_name": "Boron"
+    }, 
+    "6": {
+        "atomic_symbol": "C", 
+        "electron_config": [
+            2, 
+            4
+        ], 
+        "element_name": "Carbon"
+    }, 
+    "7": {
+        "atomic_symbol": "N", 
+        "electron_config": [
+            2, 
+            5
+        ], 
+        "element_name": "Nitrogen"
+    }, 
+    "8": {
+        "atomic_symbol": "O", 
+        "electron_config": [
+            2, 
+            6
+        ], 
+        "element_name": "Oxygen"
+    }, 
+    "9": {
+        "atomic_symbol": "F", 
+        "electron_config": [
+            2, 
+            7
+        ], 
+        "element_name": "Fluorine"
+    }, 
+    "10": {
+        "atomic_symbol": "Ne", 
+        "electron_config": [
+            2, 
+            8
+        ], 
+        "element_name": "Neon"
+    }, 
+    "11": {
+        "atomic_symbol": "Na", 
+        "electron_config": [
+            2, 
+            8, 
+            1
+        ], 
+        "element_name": "Sodium"
+    }, 
+    "12": {
+        "atomic_symbol": "Mg", 
+        "electron_config": [
+            2, 
+            8, 
+            2
+        ], 
+        "element_name": "Magnesium"
+    }, 
+    "13": {
+        "atomic_symbol": "Al", 
+        "electron_config": [
+            2, 
+            8, 
+            3
+        ], 
+        "element_name": "Aluminium"
+    }, 
+    "14": {
+        "atomic_symbol": "Si", 
+        "electron_config": [
+            2, 
+            8, 
+            4
+        ], 
+        "element_name": "Silicon"
+    }, 
+    "15": {
+        "atomic_symbol": "P", 
+        "electron_config": [
+            2, 
+            8, 
+            5
+        ], 
+        "element_name": "Phosphorus"
+    }, 
+    "16": {
+        "atomic_symbol": "S", 
+        "electron_config": [
+            2, 
+            8, 
+            6
+        ], 
+        "element_name": "Sulfur"
+    }, 
+    "17": {
+        "atomic_symbol": "Cl", 
+        "electron_config": [
+            2, 
+            8, 
+            7
+        ], 
+        "element_name": "Chlorine"
+    }, 
+    "18": {
+        "atomic_symbol": "Ar", 
+        "electron_config": [
+            2, 
+            8, 
+            8
+        ], 
+        "element_name": "Argon"
+    }, 
+    "19": {
+        "atomic_symbol": "K", 
+        "electron_config": [
+            2, 
+            8, 
+            8, 
+            1
+        ], 
+        "element_name": "Potassium"
+    }, 
+    "20": {
+        "atomic_symbol": "Ca", 
+        "electron_config": [
+            2, 
+            8, 
+            8, 
+            2
+        ], 
+        "element_name": "Calcium"
+    }, 
+    "21": {
+        "atomic_symbol": "Sc", 
+        "electron_config": [
+            2, 
+            8, 
+            9, 
+            2
+        ], 
+        "element_name": "Scandium"
+    }, 
+    "22": {
+        "atomic_symbol": "Ti", 
+        "electron_config": [
+            2, 
+            8, 
+            10, 
+            2
+        ], 
+        "element_name": "Titanium"
+    }, 
+    "23": {
+        "atomic_symbol": "V", 
+        "electron_config": [
+            2, 
+            8, 
+            11, 
+            2
+        ], 
+        "element_name": "Vanadium"
+    }, 
+    "24": {
+        "atomic_symbol": "Cr", 
+        "electron_config": [
+            2, 
+            8, 
+            13, 
+            1
+        ], 
+        "element_name": "Chromium"
+    }, 
+    "25": {
+        "atomic_symbol": "Mn", 
+        "electron_config": [
+            2, 
+            8, 
+            13, 
+            2
+        ], 
+        "element_name": "Manganese"
+    }, 
+    "26": {
+        "atomic_symbol": "Fe", 
+        "electron_config": [
+            2, 
+            8, 
+            14, 
+            2
+        ], 
+        "element_name": "Iron"
+    }, 
+    "27": {
+        "atomic_symbol": "Co", 
+        "electron_config": [
+            2, 
+            8, 
+            15, 
+            2
+        ], 
+        "element_name": "Cobalt"
+    }, 
+    "28": {
+        "atomic_symbol": "Ni", 
+        "electron_config": [
+            2, 
+            8, 
+            16, 
+            2
+        ], 
+        "element_name": "Nickel"
+    }, 
+    "29": {
+        "atomic_symbol": "Cu", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            1
+        ], 
+        "element_name": "Copper"
+    }, 
+    "30": {
+        "atomic_symbol": "Zn", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            2
+        ], 
+        "element_name": "Zinc"
+    }, 
+    "31": {
+        "atomic_symbol": "Ga", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            3
+        ], 
+        "element_name": "Gallium"
+    }, 
+    "32": {
+        "atomic_symbol": "Ge", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            4
+        ], 
+        "element_name": "Germanium"
+    }, 
+    "33": {
+        "atomic_symbol": "As", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            5
+        ], 
+        "element_name": "Arsenic"
+    }, 
+    "34": {
+        "atomic_symbol": "Se", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            6
+        ], 
+        "element_name": "Selenium"
+    }, 
+    "35": {
+        "atomic_symbol": "Br", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            7
+        ], 
+        "element_name": "Bromine"
+    }, 
+    "36": {
+        "atomic_symbol": "Kr", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            8
+        ], 
+        "element_name": "Krypton"
+    }, 
+    "37": {
+        "atomic_symbol": "Rb", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            8, 
+            1
+        ], 
+        "element_name": "Rubidium"
+    }, 
+    "38": {
+        "atomic_symbol": "Sr", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            8, 
+            2
+        ], 
+        "element_name": "Strontium"
+    }, 
+    "39": {
+        "atomic_symbol": "Y", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            9, 
+            2
+        ], 
+        "element_name": "Yttrium"
+    }, 
+    "40": {
+        "atomic_symbol": "Zr", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            10, 
+            2
+        ], 
+        "element_name": "Zirconium"
+    }, 
+    "41": {
+        "atomic_symbol": "Nb", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            12, 
+            1
+        ], 
+        "element_name": "Niobium"
+    }, 
+    "42": {
+        "atomic_symbol": "Mo", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            13, 
+            1
+        ], 
+        "element_name": "Molybdenum"
+    }, 
+    "43": {
+        "atomic_symbol": "Tc", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            13, 
+            2
+        ], 
+        "element_name": "Technetium"
+    }, 
+    "44": {
+        "atomic_symbol": "Ru", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            15, 
+            1
+        ], 
+        "element_name": "Ruthenium"
+    }, 
+    "45": {
+        "atomic_symbol": "Rh", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            16, 
+            1
+        ], 
+        "element_name": "Rhodium"
+    }, 
+    "46": {
+        "atomic_symbol": "Pd", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18
+        ], 
+        "element_name": "Palladium"
+    }, 
+    "47": {
+        "atomic_symbol": "Ag", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            1
+        ], 
+        "element_name": "Silver"
+    }, 
+    "48": {
+        "atomic_symbol": "Cd", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            2
+        ], 
+        "element_name": "Cadmium"
+    }, 
+    "49": {
+        "atomic_symbol": "In", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            3
+        ], 
+        "element_name": "Indium"
+    }, 
+    "50": {
+        "atomic_symbol": "Sn", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            4
+        ], 
+        "element_name": "Tin"
+    }, 
+    "51": {
+        "atomic_symbol": "Sb", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            5
+        ], 
+        "element_name": "Antimony"
+    }, 
+    "52": {
+        "atomic_symbol": "Te", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            6
+        ], 
+        "element_name": "Tellurium"
+    }, 
+    "53": {
+        "atomic_symbol": "I", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            7
+        ], 
+        "element_name": "Iodine"
+    }, 
+    "54": {
+        "atomic_symbol": "Xe", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            8
+        ], 
+        "element_name": "Xenon"
+    }, 
+    "55": {
+        "atomic_symbol": "Cs", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            8, 
+            1
+        ], 
+        "element_name": "Caesium"
+    }, 
+    "56": {
+        "atomic_symbol": "Ba", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            8, 
+            2
+        ], 
+        "element_name": "Barium"
+    }, 
+    "57": {
+        "atomic_symbol": "La", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            18, 
+            9, 
+            2
+        ], 
+        "element_name": "Lanthanum"
+    }, 
+    "58": {
+        "atomic_symbol": "Ce", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            19, 
+            9, 
+            2
+        ], 
+        "element_name": "Cerium"
+    }, 
+    "59": {
+        "atomic_symbol": "Pr", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            21, 
+            8, 
+            2
+        ], 
+        "element_name": "Praseodymium"
+    }, 
+    "60": {
+        "atomic_symbol": "Nd", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            22, 
+            8, 
+            2
+        ], 
+        "element_name": "Neodymium"
+    }, 
+    "61": {
+        "atomic_symbol": "Pm", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            23, 
+            8, 
+            2
+        ], 
+        "element_name": "Promethium"
+    }, 
+    "62": {
+        "atomic_symbol": "Sm", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            24, 
+            8, 
+            2
+        ], 
+        "element_name": "Samarium"
+    }, 
+    "63": {
+        "atomic_symbol": "Eu", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            25, 
+            8, 
+            2
+        ], 
+        "element_name": "Europium"
+    }, 
+    "64": {
+        "atomic_symbol": "Gd", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            25, 
+            9, 
+            2
+        ], 
+        "element_name": "Gadolinium"
+    }, 
+    "65": {
+        "atomic_symbol": "Tb", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            27, 
+            8, 
+            2
+        ], 
+        "element_name": "Terbium"
+    }, 
+    "66": {
+        "atomic_symbol": "Dy", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            28, 
+            8, 
+            2
+        ], 
+        "element_name": "Dysprosium"
+    }, 
+    "67": {
+        "atomic_symbol": "Ho", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            29, 
+            8, 
+            2
+        ], 
+        "element_name": "Holmium"
+    }, 
+    "68": {
+        "atomic_symbol": "Er", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            30, 
+            8, 
+            2
+        ], 
+        "element_name": "Erbium"
+    }, 
+    "69": {
+        "atomic_symbol": "Tm", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            31, 
+            8, 
+            2
+        ], 
+        "element_name": "Thulium"
+    }, 
+    "70": {
+        "atomic_symbol": "Yb", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            8, 
+            2
+        ], 
+        "element_name": "Ytterbium"
+    }, 
+    "71": {
+        "atomic_symbol": "Lu", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            9, 
+            2
+        ], 
+        "element_name": "Lutetium"
+    }, 
+    "72": {
+        "atomic_symbol": "Hf", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            10, 
+            2
+        ], 
+        "element_name": "Hafnium"
+    }, 
+    "73": {
+        "atomic_symbol": "Ta", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            11, 
+            2
+        ], 
+        "element_name": "Tantalum"
+    }, 
+    "74": {
+        "atomic_symbol": "W", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            12, 
+            2
+        ], 
+        "element_name": "Tungsten"
+    }, 
+    "75": {
+        "atomic_symbol": "Re", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            13, 
+            2
+        ], 
+        "element_name": "Rhenium"
+    }, 
+    "76": {
+        "atomic_symbol": "Os", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            14, 
+            2
+        ], 
+        "element_name": "Osmium"
+    }, 
+    "77": {
+        "atomic_symbol": "Ir", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            15, 
+            2
+        ], 
+        "element_name": "Iridium"
+    }, 
+    "78": {
+        "atomic_symbol": "Pt", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            17, 
+            1
+        ], 
+        "element_name": "Platinum"
+    }, 
+    "79": {
+        "atomic_symbol": "Au", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            1
+        ], 
+        "element_name": "Gold"
+    }, 
+    "80": {
+        "atomic_symbol": "Hg", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            2
+        ], 
+        "element_name": "Mercury"
+    }, 
+    "81": {
+        "atomic_symbol": "Tl", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            3
+        ], 
+        "element_name": "Thallium"
+    }, 
+    "82": {
+        "atomic_symbol": "Pb", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            4
+        ], 
+        "element_name": "Lead"
+    }, 
+    "83": {
+        "atomic_symbol": "Bi", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            5
+        ], 
+        "element_name": "Bismuth"
+    }, 
+    "84": {
+        "atomic_symbol": "Po", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            6
+        ], 
+        "element_name": "Polonium"
+    }, 
+    "85": {
+        "atomic_symbol": "At", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            7
+        ], 
+        "element_name": "Astatine"
+    }, 
+    "86": {
+        "atomic_symbol": "Rn", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            8
+        ], 
+        "element_name": "Radon"
+    }, 
+    "87": {
+        "atomic_symbol": "Fr", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            8, 
+            1
+        ], 
+        "element_name": "Francium"
+    }, 
+    "88": {
+        "atomic_symbol": "Ra", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            8, 
+            2
+        ], 
+        "element_name": "Radium"
+    }, 
+    "89": {
+        "atomic_symbol": "Ac", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            9, 
+            2
+        ], 
+        "element_name": "Actinium"
+    }, 
+    "90": {
+        "atomic_symbol": "Th", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            18, 
+            10, 
+            2
+        ], 
+        "element_name": "Thorium"
+    }, 
+    "91": {
+        "atomic_symbol": "Pa", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            20, 
+            9, 
+            2
+        ], 
+        "element_name": "Protactinium"
+    }, 
+    "92": {
+        "atomic_symbol": "U", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            21, 
+            9, 
+            2
+        ], 
+        "element_name": "Uranium"
+    }, 
+    "93": {
+        "atomic_symbol": "Np", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            22, 
+            9, 
+            2
+        ], 
+        "element_name": "Neptunium"
+    }, 
+    "94": {
+        "atomic_symbol": "Pu", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            24, 
+            8, 
+            2
+        ], 
+        "element_name": "Plutonium"
+    }, 
+    "95": {
+        "atomic_symbol": "Am", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            25, 
+            8, 
+            2
+        ], 
+        "element_name": "Americium"
+    }, 
+    "96": {
+        "atomic_symbol": "Cm", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            25, 
+            9, 
+            2
+        ], 
+        "element_name": "Curium"
+    }, 
+    "97": {
+        "atomic_symbol": "Bk", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            27, 
+            8, 
+            2
+        ], 
+        "element_name": "Berkelium"
+    }, 
+    "98": {
+        "atomic_symbol": "Cf", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            28, 
+            8, 
+            2
+        ], 
+        "element_name": "Californium"
+    }, 
+    "99": {
+        "atomic_symbol": "Es", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            29, 
+            8, 
+            2
+        ], 
+        "element_name": "Einsteinium"
+    }, 
+    "100": {
+        "atomic_symbol": "Fm", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            30, 
+            8, 
+            2
+        ], 
+        "element_name": "Fermium"
+    }, 
+    "101": {
+        "atomic_symbol": "Md", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            31, 
+            8, 
+            2
+        ], 
+        "element_name": "Mendelevium"
+    }, 
+    "102": {
+        "atomic_symbol": "No", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            8, 
+            2
+        ], 
+        "element_name": "Nobelium"
+    }, 
+    "103": {
+        "atomic_symbol": "Lr", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            8, 
+            3
+        ], 
+        "element_name": "Lawrencium"
+    }, 
+    "104": {
+        "atomic_symbol": "Rf", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            10, 
+            2
+        ], 
+        "element_name": "Rutherfordium"
+    }, 
+    "105": {
+        "atomic_symbol": "Db", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            11, 
+            2
+        ], 
+        "element_name": "Dubnium"
+    }, 
+    "106": {
+        "atomic_symbol": "Sg", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            12, 
+            2
+        ], 
+        "element_name": "Seaborgium"
+    }, 
+    "107": {
+        "atomic_symbol": "Bh", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            13, 
+            2
+        ], 
+        "element_name": "Bohrium"
+    }, 
+    "108": {
+        "atomic_symbol": "Hs", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            14, 
+            2
+        ], 
+        "element_name": "Hassium"
+    }, 
+    "109": {
+        "atomic_symbol": "Mt", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            15, 
+            2
+        ], 
+        "element_name": "Meitnerium"
+    }, 
+    "110": {
+        "atomic_symbol": "Ds", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            16, 
+            2
+        ], 
+        "element_name": "Darmstadtium"
+    }, 
+    "111": {
+        "atomic_symbol": "Rg", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            17, 
+            2
+        ], 
+        "element_name": "Roentgenium"
+    }, 
+    "112": {
+        "atomic_symbol": "Cn", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            18, 
+            2
+        ], 
+        "element_name": "Copernicium"
+    }, 
+    "113": {
+        "atomic_symbol": "Uut", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            18, 
+            3
+        ], 
+        "element_name": "Ununtrium"
+    }, 
+    "114": {
+        "atomic_symbol": "Fl", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            18, 
+            4
+        ], 
+        "element_name": "Flerovium"
+    }, 
+    "115": {
+        "atomic_symbol": "Uup", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            18, 
+            5
+        ], 
+        "element_name": "Ununpentium"
+    }, 
+    "116": {
+        "atomic_symbol": "Lv", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            18, 
+            6
+        ], 
+        "element_name": "Livermorium"
+    }, 
+    "117": {
+        "atomic_symbol": "Uus", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            18, 
+            7
+        ], 
+        "element_name": "Ununseptium"
+    }, 
+    "118": {
+        "atomic_symbol": "Uuo", 
+        "electron_config": [
+            2, 
+            8, 
+            18, 
+            32, 
+            32, 
+            18, 
+            8
+        ], 
+        "element_name": "Ununoctium"
+    }
+}
