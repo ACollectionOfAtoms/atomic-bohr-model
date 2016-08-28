@@ -1,9 +1,13 @@
+const d3 = require('d3')
 import Atom from './atom'
 import Electron from './electron'
-var d3 = require('d3')
+import $ from 'jquery'
+import jQuery from 'jquery'
 
-let a = new Atom(1,23)
-let e = new Electron(a)
-console.log(a)
-console.log(e)
-console.log(d3)
+class DrawModel {
+  constructor(d3Selection) {
+    this.atom = new Atom(d3.select(d3Selection), 2)
+  }
+}
+
+new DrawModel("#bohr-model-container")
