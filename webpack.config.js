@@ -5,7 +5,7 @@ var webpack = require('webpack')
 module.exports = {
   context: __dirname,
 
-  entry: ['./app.js'],
+  entry: ['./app.js', 'libs/svgUtils.js'],
   output: {
     path: path.resolve('./bundles/'),
     filename: 'bundle.js'
@@ -29,6 +29,7 @@ module.exports = {
   },
   resolve: {
     moduleDirectores: ['node_modules'],
+    root: ['.'],
     extensions: ['', '.js']
   }
 };
