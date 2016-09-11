@@ -7,4 +7,4 @@ window.$ = $
 window.jQuery = jQuery
 window.d3 = d3
 
-new Atom("#bohr-model-container", 118)
+new Atom("#bohr-model-container", 32, 10)

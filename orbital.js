@@ -10,11 +10,12 @@ export default class {
     this.numElectrons = numElectrons
     this.orbitalId = 'orbital-' + idNumber  // 0 = Hydrogen, 1 = Helium ...
 
-    this.ePath = Object
+    this.ePath = Object  // d3 path
     this.pathId = 'e-path-' + idNumber
     this.drawElectronPath()
+    this.totalPathLength =  (this.ePath.getTotalLength() / 2) + 3// d3.arc paths have double actual length (?), also unsure why adding 3 ensures proper length
     this.electrons = Array.from(new Array(this.numElectrons), (e,i) => new Electron(this.orbitalId, i))
-    this.addElectrons()
+    this.drawElectrons()  // intialize with a given number of electrons
   }
   drawElectronPath() {
     let translation = String("translate(x, y)")
@@ -30,23 +31,51 @@ export default class {
                                     .attr("d", ePathDescription)
     this.ePath = d3.select('#' + this.pathId).node()
   }
-  addElectrons() {
+  drawElectrons() {
     // this method should add electrons to the correct coordinates (distance on path)
     // wrt number of electrons.
     // To keep electrons equi-distant, (i)*(L/N) is applied, where:
     // L = total length of path
     // N = number of electrons
     // i = index of the electron
-    // for n > 1
-    let totalPathLength = (this.ePath.getTotalLength() / 2) + 3// d3.arc paths have double actual length (?), also unsure why adding 3 ensures proper length
-    let uniqueDistance = totalPathLength / this.numElectrons
+    let uniqueDistance = this.totalPathLength / this.numElectrons
     for (let e of this.electrons) {
       if (this.electrons.indexOf(e) === 0) {
         svgUtils.transitionAlongPath(e, this.ePath, 0)
       } else {
-        uniqueDistance = this.electrons.indexOf(e) * (totalPathLength/ this.numElectrons)
+        uniqueDistance = this.electrons.indexOf(e) * (this.totalPathLength/ this.numElectrons)
         svgUtils.transitionAlongPath(e, this.ePath, uniqueDistance)
       }
+    }
+  }
+  updateElectrons(num) {
+    // Cheap way to change electron number. Must figure out way to
+    // add and remove electrons elegantly
+    d3.select('#' + this.orbitalId).remove()
+    this.numElectrons = num
+    this.drawElectronPath()
+    this.electrons = Array.from(new Array(num), (e,i) => new Electron(this.orbitalId, i))
+    this.drawElectrons()
+  }
+  addElectrons(num) {
+    this.numElectrons += num
+    // like python's range(num)
+    for (let n in new Array(num).fill(true)) {
+      this.electrons.push(new Electron(this.orbitalId, this.electrons.length + 1))
+    }
+    for (let e in this.electrons) {
+      // reposition all electrons similar to how they are initially drawn
+    }
+  }
+  removeElectrons(num) {
+    this.numElectrons -= num
+    for (let n in new Array(num).fill(true)) {
+      this.electrons[this.electrons.length-1].remove()
+      this.electrons.pop()
+    }
+    this.drawElectrons()
+    for (let e in this.electrons) {
+      // reposition all electrons similar to how they are initially drawn
     }
   }
 }

@@ -5,12 +5,13 @@ export function circularPathDescription(radius) {
             .startAngle(0)
             .endAngle(Math.PI*2)
 }
+// these two methods are from https://bl.ocks.org/mbostock/1705868
 export function transitionAlongPath(selection, path, distance) {
   selection.transition()
-          .duration(1000)
-          .attrTween("transform", translateAlongTo(path, distance))
+            .duration(1000)
+            .attrTween("transform", translateAlong(path, distance))
 }
-export function translateAlongTo(path, distance) {
+export function translateAlong(path, distance) {
   let l = distance
   return (d, i, a) => {
     return (t) => {

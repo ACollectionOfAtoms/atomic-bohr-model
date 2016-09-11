@@ -2,3 +2,8 @@
   height: 10em;
   width: 10em;
 }
+
+.atomic-symbol,
+.element-name {
+  font-family: 'Futura', Arial, sans-serif;
+}

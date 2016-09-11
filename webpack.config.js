@@ -24,6 +24,10 @@ module.exports = {
               plugins: ['transform-runtime'],
               presets: ['es2015']
             }
+          },
+          {
+            test: /\.json$/,
+            loader: 'json'
           }
       ]
   },
