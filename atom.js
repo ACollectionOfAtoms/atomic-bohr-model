@@ -17,7 +17,10 @@ export default class {
     this.orbitalSpacing = orbitalSpacing
     this.orbitals = []
     this.nucleus = this.createNucleus()
-    this.drawElectronPaths()
+    this.drawOrbitals()
+    // THESE SHOULD BE TEMPORARY
+    $("addElectronButton").click(this.addElectrons())
+    $("removeElectronButton").click(this.removeElectrons())
   }
   createNucleus() {
     return this.svgContainer.append("circle")
@@ -26,7 +29,7 @@ export default class {
                                 .attr("r", this.nucleusRadius)
                                 .attr("class", "bohr-model-nucleus")
   }
-  drawElectronPaths() {
+  drawOrbitals() {
     // using the electron config array in atomic_data.json,
     // iterate through and create orbitals with their values
     // increment on radius by ``` orbitalSpacing ```
@@ -37,17 +40,19 @@ export default class {
 
     let spacing = this.orbitalSpacing
     let orbId = 0
+    //TODO catch when eNumber is greater than 118
     for (let eNumber of electronConfig) {
       let orbital = new Orbital(this, this.nucleusRadius*spacing, eNumber, orbId)
       this.orbitals.push(orbital)
       spacing += 0.5
       orbId += 1
     }
+    // The below should be their own methods
     this.svgContainer.append("text")
                 .attr("x", this.center.x)
                 .attr("y", this.center.y + 4)
                 .attr("font-size", this.nucleusRadius)
-                .attr("class", "atomic-symbol")
+                .attr("class", "bohr-atomic-symbol")
                 .attr("text-anchor", "middle")
                 .text(atomicSymbol)
                 .style("fill", "white")
@@ -55,11 +60,21 @@ export default class {
                       .attr("x", this.center.x)
                       .attr("y", this.center.y*2 - 5)
                       .attr("text-anchor", "middle")
-                      .attr("class", "element-name")
+                      .attr("class", "bohr-element-name")
                       .text(elementName)
   }
-  addElectrons(num) {
+  addElectrons() {
+    // d3.select(".bohr-atomic-symbol").remove()
+    // d3.select(".bohr-element-name").remove()
+    // this.removeAllOrbitals()
   }
   removeElectrons(num) {
+  }
+  removeAllOrbitals() {
+    for (let o of this.orbitals) {
+      this.orbitals.pop()
+      d3.select(o.orbitalId).remove()
+    }
+    console.log(orbitals)
   }
 }

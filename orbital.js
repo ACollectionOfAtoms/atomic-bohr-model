@@ -8,7 +8,7 @@ export default class {
     this.atom = atom
     this.radius = radius
     this.numElectrons = numElectrons
-    this.orbitalId = 'orbital-' + idNumber  // 0 = Hydrogen, 1 = Helium ...
+    this.orbitalId = 'orbital-' + idNumber
 
     this.ePath = Object  // d3 path
     this.pathId = 'e-path-' + idNumber
@@ -26,7 +26,7 @@ export default class {
                             .attr("transform", translation)
     let ePathDescription = svgUtils.circularPathDescription(this.radius)
     d3.select('#' + this.orbitalId).append("path")
-                                    .attr("class", "electron-path")
+                                    .attr("class", "bohr-electron-path")
                                     .attr("id", this.pathId)
                                     .attr("d", ePathDescription)
     this.ePath = d3.select('#' + this.pathId).node()
@@ -50,7 +50,7 @@ export default class {
   }
   updateElectrons(num) {
     // Cheap way to change electron number. Must figure out way to
-    // add and remove electrons elegantly
+    // TODO: add and remove electrons elegantly
     d3.select('#' + this.orbitalId).remove()
     this.numElectrons = num
     this.drawElectronPath()

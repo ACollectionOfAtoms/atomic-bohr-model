@@ -1,3 +1,4 @@
+// Electrons are associated with orbitals,
 export default class {
   constructor(orbitalId, idNumber, radius=2, color='black') {
     this.orbitalId = orbitalId
@@ -7,7 +8,7 @@ export default class {
     // materialize electron (could be method)
     return d3.select('#' + this.orbitalId).append("circle")
                                     .attr("r", this.radius)
-                                    .attr("class", "electron")
+                                    .attr("class", "bohr-electron")
                                     .attr("id", this.eId)
                                     .style("fill", this.color)
   }

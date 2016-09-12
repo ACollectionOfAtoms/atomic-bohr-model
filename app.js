@@ -7,4 +7,4 @@ window.$ = $
 window.jQuery = jQuery
 window.d3 = d3
 
-new Atom("#bohr-model-container", 32, 10)
+let a = new Atom("#bohr-model-container", 23, 12)  // Max is 118 e-

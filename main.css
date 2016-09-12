@@ -3,7 +3,7 @@
   width: 10em;
 }
 
-.atomic-symbol,
-.element-name {
+.bohr-atomic-symbol,
+.bohr-element-name {
   font-family: 'Futura', Arial, sans-serif;
 }
