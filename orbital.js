@@ -1,17 +1,17 @@
-// This should provide an ``` orbital ``` object, which is a <g> tag housing
+// This should provide an ``` orbital ``` object, which is a <g> element housing
 // the electron path, it's length, and the electrons themselves
 import Electron from './electron'
 import * as svgUtils from './libs/svgUtils'
 
 export default class {
-  constructor(atom, radius, numElectrons, idNumber) {
+  constructor(atom, radius, numElectrons, atomId, idNumber) {
     this.atom = atom
     this.radius = radius
     this.numElectrons = numElectrons
-    this.orbitalId = 'orbital-' + idNumber
+    this.orbitalId = atomId + '-orbital-' + idNumber
 
     this.ePath = Object  // d3 path
-    this.pathId = 'e-path-' + idNumber
+    this.pathId = this.orbitalId + '-e-path-' + idNumber
     this.drawElectronPath()
     this.totalPathLength =  (this.ePath.getTotalLength() / 2) + 3// d3.arc paths have double actual length (?), also unsure why adding 3 ensures proper length
     this.electrons = Array.from(new Array(this.numElectrons), (e,i) => new Electron(this.orbitalId, i))
@@ -21,7 +21,7 @@ export default class {
     let translation = String("translate(x, y)")
     translation = translation.replace(/x/, this.atom.center.x)
     translation = translation.replace(/y/, this.atom.center.y)
-    this.atom.svgContainer.append("g")
+    this.atom.atomContainer.append("g")
                             .attr("id", this.orbitalId)
                             .attr("transform", translation)
     let ePathDescription = svgUtils.circularPathDescription(this.radius)
@@ -49,7 +49,7 @@ export default class {
     }
   }
   updateElectrons(num) {
-    // Cheap way to change electron number. Must figure out way to
+    // Cheap way to change electron number. Must figure out way
     // TODO: add and remove electrons elegantly
     d3.select('#' + this.orbitalId).remove()
     this.numElectrons = num
@@ -59,8 +59,7 @@ export default class {
   }
   addElectrons(num) {
     this.numElectrons += num
-    // like python's range(num)
-    for (let n in new Array(num).fill(true)) {
+    for (let n; n < num; n++) {
       this.electrons.push(new Electron(this.orbitalId, this.electrons.length + 1))
     }
     for (let e in this.electrons) {

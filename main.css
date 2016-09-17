@@ -1,6 +1,14 @@
 #bohr-model-container {
-  height: 10em;
-  width: 10em;
+  height: 20em;
+  width: 20em;
+  border: 1px solid black;
+}
+
+#bohr-model-container-2 {
+  height: 20em;
+  width: 20em;
+  border: 1px solid black;
+  display: inline-block;
 }
 
 .bohr-atomic-symbol,

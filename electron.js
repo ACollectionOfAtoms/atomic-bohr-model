@@ -1,6 +1,6 @@
 // Electrons are associated with orbitals,
 export default class {
-  constructor(orbitalId, idNumber, radius=2, color='black') {
+  constructor(orbitalId, idNumber, radius=3, color='black') {
     this.orbitalId = orbitalId
     this.radius = radius
     this.color = color
