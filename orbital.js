@@ -4,26 +4,32 @@ import Electron from './electron'
 import * as svgUtils from './libs/svgUtils'
 
 export default class {
-  constructor(atom, radius, numElectrons, atomId, idNumber) {
+  constructor(atom, radius, numElectrons, atomId, idNumber, animationTime) {
     this.atom = atom
     this.radius = radius
     this.numElectrons = numElectrons
+    this.animationTime = animationTime
     this.orbitalId = atomId + '-orbital-' + idNumber
+
 
     this.ePath = Object  // d3 path
     this.pathId = this.orbitalId + '-e-path-' + idNumber
+    this.orbitalContainer = this.createOrbitalContainer()
     this.drawElectronPath()
     this.totalPathLength =  (this.ePath.getTotalLength() / 2) + 3// d3.arc paths have double actual length (?), also unsure why adding 3 ensures proper length
     this.electrons = Array.from(new Array(this.numElectrons), (e,i) => new Electron(this.orbitalId, i))
     this.drawElectrons()  // intialize with a given number of electrons
   }
-  drawElectronPath() {
-    let translation = String("translate(x, y)")
-    translation = translation.replace(/x/, this.atom.center.x)
-    translation = translation.replace(/y/, this.atom.center.y)
-    this.atom.atomContainer.append("g")
+  createOrbitalContainer() {
+    let translation = `translate(${this.atom.center.x}, ${this.atom.center.y})`
+    return this.atom.atomContainer.append("g")
                             .attr("id", this.orbitalId)
+                            .attr("width", this.atom.center.x * 2)
+                            .attr("height", this.atom.center.y * 2)
                             .attr("transform", translation)
+
+  }
+  drawElectronPath() {
     let ePathDescription = svgUtils.circularPathDescription(this.radius)
     d3.select('#' + this.orbitalId).append("path")
                                     .attr("class", "bohr-electron-path")
@@ -41,40 +47,13 @@ export default class {
     let uniqueDistance = this.totalPathLength / this.numElectrons
     for (let e of this.electrons) {
       if (this.electrons.indexOf(e) === 0) {
-        svgUtils.transitionAlongPath(e, this.ePath, 0)
+        svgUtils.transitionAlongPath(e, this.ePath, 0, this.animationTime)
       } else {
         uniqueDistance = this.electrons.indexOf(e) * (this.totalPathLength/ this.numElectrons)
-        svgUtils.transitionAlongPath(e, this.ePath, uniqueDistance)
+        svgUtils.transitionAlongPath(e, this.ePath, uniqueDistance, this.animationTime)
       }
     }
   }
-  updateElectrons(num) {
-    // Cheap way to change electron number. Must figure out way
-    // TODO: add and remove electrons elegantly
-    d3.select('#' + this.orbitalId).remove()
-    this.numElectrons = num
-    this.drawElectronPath()
-    this.electrons = Array.from(new Array(num), (e,i) => new Electron(this.orbitalId, i))
-    this.drawElectrons()
-  }
-  addElectrons(num) {
-    this.numElectrons += num
-    for (let n; n < num; n++) {
-      this.electrons.push(new Electron(this.orbitalId, this.electrons.length + 1))
-    }
-    for (let e in this.electrons) {
-      // reposition all electrons similar to how they are initially drawn
-    }
-  }
-  removeElectrons(num) {
-    this.numElectrons -= num
-    for (let n in new Array(num).fill(true)) {
-      this.electrons[this.electrons.length-1].remove()
-      this.electrons.pop()
-    }
-    this.drawElectrons()
-    for (let e in this.electrons) {
-      // reposition all electrons similar to how they are initially drawn
-    }
-  }
+  //TODO: create 3 methods for updating, adding, and removing electrons elegantly
+  // e.g without redrawing entirely;
 }

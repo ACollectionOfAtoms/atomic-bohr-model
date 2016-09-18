@@ -1,17 +1,20 @@
+.atom-row {
+  height: 20em;
+  width: 20em;
+  border: 1px solid black;
+  display: table-cell;
+}
 #bohr-model-container {
-  height: 20em;
-  width: 20em;
-  border: 1px solid black;
 }
-
 #bohr-model-container-2 {
-  height: 20em;
-  width: 20em;
-  border: 1px solid black;
-  display: inline-block;
 }
-
 .bohr-atomic-symbol,
 .bohr-element-name {
   font-family: 'Futura', Arial, sans-serif;
+}
+.element-table {
+  display: table;
+}
+.element-table-row {
+  display: table-row;
 }
