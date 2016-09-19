@@ -1,7 +1,7 @@
 // This should provide an ``` orbital ``` object, which is a <g> element housing
 // the electron path, it's length, and the electrons themselves
 import Electron from './electron'
-import * as svgUtils from './libs/svgUtils'
+import * as svgUtils from './utils/svgUtils'
 
 export default class {
   constructor(atom, radius, numElectrons, atomId, idNumber, animationTime) {
@@ -55,5 +55,5 @@ export default class {
     }
   }
   //TODO: create 3 methods for updating, adding, and removing electrons elegantly
-  // e.g without redrawing entirely;
+  // e.g without redrawing entirely in atom.js
 }

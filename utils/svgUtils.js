@@ -24,7 +24,7 @@ export function rotateInPlace({selection, center, speed, clockwise, isChild}) {
   let start = Date.now()
   d3.timer(() => {
     // TODO: Ensure angle stays within 0 and 360
-    let angle = ((Date.now() - start) / 1000) * speed
+    let angle = ((Date.now() - start) / 10000) * speed
     angle = clockwise ? angle : -angle
     let transform
     if (isChild) {

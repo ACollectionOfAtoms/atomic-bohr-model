@@ -1,5 +1,5 @@
-import * as svgUtils from './libs/svgUtils'
-import patternMath from './libs/patternMath'
+import * as svgUtils from './utils/svgUtils'
+import patternMath from './utils/patternMath'
 import Orbital from './orbital'
 import atomicData from './atomic_data.json'
 
@@ -139,6 +139,7 @@ export default class {
     svgUtils.rotateInPlace({selection: this.atomContainer, center: this.center, speed: speed, clockwise: clockwise})
   }
   rotateOrbitals({speed, pattern}) {
+    // TODO add clockwise as pattern param
     let alternating = pattern.alternating,
         formula = pattern.formula,
         preset = pattern.preset,
@@ -149,41 +150,52 @@ export default class {
       case 'linear positive':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('linearPositive')
-        this.beginRotation(speed, mod, alternating)
+        this.beginRotation(speed, mod, alternating, clockwise)
         break
       case 'linear negative':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('linearNegative')
-        this.beginRotation(speed, mod, alternating)
+        this.beginRotation(speed, mod, alternating, clockwise)
         break
       case 'cubed positive':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('cubedPositive')
-        this.beginRotation(speed, mod, alternating)
+        this.beginRotation(speed, mod, alternating, clockwise)
         break
       case 'cubed negative':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('cubedNegative')
-        this.beginRotation(speed, mod, alternating)
+        this.beginRotation(speed, mod, alternating, clockwise)
         break
-      case 'parabola':
+      case 'parabola up':
         mod = new patternMath(speed, patternLength)
-        mod.setFunction('parabola')
-        this.beginRotation(speed, mod, alternating)
+        mod.setFunction('parabolaUp')
+        this.beginRotation(speed, mod, alternating, clockwise)
+        break
+      case 'parabola down':
+        mod = new patternMath(speed, patternLength)
+        mod.setFunction('parabolaDown')
+        this.beginRotation(speed, mod, alternating, clockwise)
+        break
+      case 'wavy':
+        mod = new patternMath(speed, patternLength, clockwise)
+        mod.setFunction('wavy')
+        this.beginRotation(speed, mod, alternating, clockwise)
         break
       case 'random':
         mod = new patternMath(speed)
         mod.setFunction('random')
-        this.beginRotation(speed, mod)
+        this.beginRotation(speed, mod, alternating, clockwise)
         break
       default:
         this.beginRotation(speed)
     }
   }
-  beginRotation(speed, speedModObject, alternating) {
+  beginRotation(speed, speedModObject, alternating, startClockwise) {
     let orbSelections = Array.from(new Array(this.orbitals.length), (x, i) => this.orbitals[i].orbitalContainer),
         speedMod = speed,
-        clockwise = true
+        clockwise = startClockwise
+        console.log(alternating)
     for (let orb of orbSelections) {
       speedMod = speedModObject.mainFunction()
       svgUtils.rotateInPlace({selection: orb, center: this.center, speed: speedMod, isChild: true, clockwise: clockwise})
