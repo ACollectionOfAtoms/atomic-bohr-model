@@ -147,32 +147,32 @@ export default class {
         patternLength = this.orbitals.length,
         mod
     switch (preset) {
-      case 'linear positive':
+      case 'linearPositive':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('linearPositive')
         this.beginRotation(speed, mod, alternating, clockwise)
         break
-      case 'linear negative':
+      case 'linearNegative':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('linearNegative')
         this.beginRotation(speed, mod, alternating, clockwise)
         break
-      case 'cubed positive':
+      case 'cubedPositive':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('cubedPositive')
         this.beginRotation(speed, mod, alternating, clockwise)
         break
-      case 'cubed negative':
+      case 'cubedNegative':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('cubedNegative')
         this.beginRotation(speed, mod, alternating, clockwise)
         break
-      case 'parabola up':
+      case 'parabolaUp':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('parabolaUp')
         this.beginRotation(speed, mod, alternating, clockwise)
         break
-      case 'parabola down':
+      case 'parabolaDown':
         mod = new patternMath(speed, patternLength)
         mod.setFunction('parabolaDown')
         this.beginRotation(speed, mod, alternating, clockwise)
