@@ -81,24 +81,23 @@ export default class {
       orbIdNumber += 1
     }
   }
-
   drawAtomicSymbol() {
     this.atomContainer.append("text")
-                .attr("x", this.center.x)
-                .attr("y", this.center.y + 12)
-                .attr("font-size", this.nucleusRadius)
-                .attr("class", "bohr-atomic-symbol")
-                .attr("text-anchor", "middle")
-                .text(this.atomicSymbol)
-                .style("fill", "white")
+                        .attr("x", this.center.x)
+                        .attr("y", this.center.y + 12)
+                        .attr("font-size", this.nucleusRadius)
+                        .attr("class", "bohr-atomic-symbol")
+                        .attr("text-anchor", "middle")
+                        .text(this.atomicSymbol)
+                        .style("fill", "white")
   }
   drawAtomName() {
     this.atomContainer.append("text")
-                      .attr("x", this.center.x)
-                      .attr("y", this.center.y*2 - 4)
-                      .attr("text-anchor", "middle")
-                      .attr("class", "bohr-element-name")
-                      .text(this.elementName)
+                        .attr("x", this.center.x)
+                        .attr("y", this.center.y*2 - 4)
+                        .attr("text-anchor", "middle")
+                        .attr("class", "bohr-element-name")
+                        .text(this.elementName)
   }
   setNumElectrons(num) {
     this.destroy()
@@ -143,7 +142,7 @@ export default class {
     let alternating = pattern.alternating,
         formula = pattern.formula,
         preset = pattern.preset,
-        clockwise = true,
+        clockwise = pattern.clockwise,
         patternLength = this.orbitals.length,
         mod
     switch (preset) {
@@ -187,15 +186,17 @@ export default class {
         mod.setFunction('random')
         this.beginRotation(speed, mod, alternating, clockwise)
         break
-      default:
-        this.beginRotation(speed)
+      case 'uniform':
+        mod = new patternMath(speed)
+        mod.setFunction('uniform')
+        this.beginRotation(speed, mod, alternating, clockwise)
+        break
     }
   }
   beginRotation(speed, speedModObject, alternating, startClockwise) {
     let orbSelections = Array.from(new Array(this.orbitals.length), (x, i) => this.orbitals[i].orbitalContainer),
         speedMod = speed,
         clockwise = startClockwise
-        console.log(alternating)
     for (let orb of orbSelections) {
       speedMod = speedModObject.mainFunction()
       svgUtils.rotateInPlace({selection: orb, center: this.center, speed: speedMod, isChild: true, clockwise: clockwise})

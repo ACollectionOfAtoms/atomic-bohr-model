@@ -28,7 +28,6 @@ export function rotateInPlace({selection, center, speed, clockwise, isChild}) {
     angle = clockwise ? angle : -angle
     let transform
     if (isChild) {
-      angle = -angle
       transform = `translate(${center.x}, ${center.y}) rotate(${angle}, 0, 0)`
     }else{
       transform = `rotate(${angle}, ${center.x}, ${center.y})`
