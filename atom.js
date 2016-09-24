@@ -8,9 +8,15 @@ export default class {
                 containerId,
                 numElectrons,
                 nucleusRadius,
+                nucleusColor,
+                electronRadius,
+                electronColor,
                 orbitalSpacing,
                 idNumber,
                 animationTime,
+                rotateConfig,
+                orbitalRotationConfig,
+                symbolOffset=8,
                 drawSymbol=true,
                 drawLabel=false,
               }) {
@@ -20,15 +26,20 @@ export default class {
     this.idNumber = idNumber
     this.containerId = containerId
     this.nucleusRadius = nucleusRadius
+    this.electronRadius = electronRadius
+    this.electronColor = electronColor
     this.svgContainer = this.createSvgContainer(idNumber)
     this.atomContainer = this.createAtomContainer(idNumber)
     this.numElectrons = this.ensureAtomicExistence(numElectrons) // Restrict to elements that exist
-    this.nucleus = this.createNucleus(containerId, nucleusRadius)
+    this.nucleus = this.createNucleus(containerId, nucleusRadius, nucleusColor)
     this.orbitalSpacing = orbitalSpacing ? orbitalSpacing : this.nucleusRadius / 3
     this.setAtomicConfig()
     this.drawOrbitals()
+    this.symbolOffset = symbolOffset
     if(drawSymbol) { this.drawAtomicSymbol()}
     if(drawLabel) {this.drawAtomName()}
+    if(rotateConfig) {this.rotate(rotateConfig)}
+    if(orbitalRotationConfig) {this.rotateOrbitals(orbitalRotationConfig)}
   }
   createSvgContainer(idNumber) {
     return this.containerEle.append("svg")
@@ -46,16 +57,18 @@ export default class {
                               .attr("id", this.atomId)
 
   }
-  createNucleus(containerId, nucleusRadius) {
+  createNucleus(containerId, nucleusRadius, nucleusColor='black') {
     this.nucleusRadius = nucleusRadius ?
                          nucleusRadius :
                          $(containerId).width() / 12
+    let color = nucleusColor
     return this.atomContainer.append("circle")
                                 .attr("cx", this.center.x)
                                 .attr("cy", this.center.y)
                                 .attr("r", this.nucleusRadius)
                                 .attr("class", "bohr-model-nucleus")
                                 .attr("id", this.atomId + "-nucleus")
+                                .style('fill', color)
   }
   setAtomicConfig() {
     let atomicNumber = this.numElectrons.toString(),
@@ -64,6 +77,8 @@ export default class {
     this.electronConfig = elementData['electron_config']
     this.atomicSymbol = elementData['atomic_symbol']
     this.elementName = elementData['element_name']
+    this.wikiSummary = elementData['wiki_summary']
+    this.wikiUrl = elementData['wiki_url']
   }
   drawOrbitals(pattern) {
     this.orbitals = []
@@ -75,7 +90,7 @@ export default class {
         speed = 55
     for (let eNumber of this.electronConfig) {
       // TODO: expose animation time here to allow for different times per orbital
-      let orbital = new Orbital(this, spacing, eNumber, this.atomId, orbIdNumber, this.animationTime)
+      let orbital = new Orbital(this, spacing, eNumber, this.electronRadius, this.electronColor, this.atomId, orbIdNumber, this.animationTime)
       this.orbitals.push(orbital)
       spacing += this.orbitalSpacing
       orbIdNumber += 1
@@ -84,7 +99,7 @@ export default class {
   drawAtomicSymbol() {
     this.atomContainer.append("text")
                         .attr("x", this.center.x)
-                        .attr("y", this.center.y + 12)
+                        .attr("y", this.center.y + this.symbolOffset)
                         .attr("font-size", this.nucleusRadius)
                         .attr("class", "bohr-atomic-symbol")
                         .attr("text-anchor", "middle")

@@ -13,7 +13,12 @@ let a = new Atom({
                   numElectrons: 118,
                   idNumber: 1,
                   animationTime: 1800,
-                  drawLabel: true
+                  drawLabel: true,
+                  orbitalRotationConfig: {pattern:
+                                            {preset:'parabolaUp',
+                                             clockwise: false
+                                           }
+                                         }
                 })
 let a2 = new Atom({
                    containerId: '#bohr-model-container-2',
@@ -104,7 +109,6 @@ let a6 = new Atom({
                     drawLabel: true
                   })
 
-a.rotateOrbitals({pattern:{preset:'uniform', alternating: true, clockwise: false}})
 a2.rotateOrbitals({pattern: {preset:'cubedNegative'}})
 a3.rotateOrbitals({pattern:{preset:'cubedPositive', alternating: true}})
 a4.rotateOrbitals({pattern:{preset:'cubedNegative', alternating: true}})

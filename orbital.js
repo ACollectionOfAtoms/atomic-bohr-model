@@ -4,10 +4,12 @@ import Electron from './electron'
 import * as svgUtils from './utils/svgUtils'
 
 export default class {
-  constructor(atom, radius, numElectrons, atomId, idNumber, animationTime) {
+  constructor(atom, radius, numElectrons, electronRadius, electronColor, atomId, idNumber, animationTime) {
     this.atom = atom
     this.radius = radius
     this.numElectrons = numElectrons
+    this.electronRadius = electronRadius
+    this.electronColor = electronColor
     this.animationTime = animationTime
     this.orbitalId = atomId + '-orbital-' + idNumber
 
@@ -17,7 +19,7 @@ export default class {
     this.orbitalContainer = this.createOrbitalContainer()
     this.drawElectronPath()
     this.totalPathLength =  (this.ePath.getTotalLength() / 2) + 3// d3.arc paths have double actual length (?), also unsure why adding 3 ensures proper length
-    this.electrons = Array.from(new Array(this.numElectrons), (e,i) => new Electron(this.orbitalId, i))
+    this.electrons = Array.from(new Array(this.numElectrons), (e,i) => new Electron(this.orbitalId, i, this.electronRadius, this.electronColor))
     this.drawElectrons()  // intialize with a given number of electrons
   }
   createOrbitalContainer() {
