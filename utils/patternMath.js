@@ -93,9 +93,6 @@ export default class {
       case 'parabolaDown':
         this.mainFunction = this.parabolaDown
         break
-      case 'wavy':
-        this.mainFunction = this.wavy
-        break
       case 'uniform':
         this.mainFunction = this.uniform
         break

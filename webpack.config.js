@@ -5,7 +5,7 @@ var webpack = require('webpack')
 module.exports = {
   context: __dirname,
 
-  entry: ['./app.js', 'utils/svgUtils.js'],
+  entry: ['./app.js'],
   output: {
     path: path.resolve('./bundles/'),
     filename: 'bundle.js'

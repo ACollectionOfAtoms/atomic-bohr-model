@@ -145,58 +145,54 @@ export default class {
         clockwise = pattern.clockwise,
         patternLength = this.orbitals.length,
         mod
+    // TODO: Let speed modifier be meaningful
     switch (preset) {
       case 'linearPositive':
-        mod = new patternMath(speed, patternLength)
+        mod = new patternMath(15, patternLength)
         mod.setFunction('linearPositive')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
       case 'linearNegative':
-        mod = new patternMath(speed, patternLength)
+        mod = new patternMath(15, patternLength)
         mod.setFunction('linearNegative')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
       case 'cubedPositive':
-        mod = new patternMath(speed, patternLength)
+        mod = new patternMath(15, patternLength)
         mod.setFunction('cubedPositive')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
       case 'cubedNegative':
-        mod = new patternMath(speed, patternLength)
+        mod = new patternMath(35, patternLength)
         mod.setFunction('cubedNegative')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
       case 'parabolaUp':
-        mod = new patternMath(speed, patternLength)
+        mod = new patternMath(10, patternLength)
         mod.setFunction('parabolaUp')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
       case 'parabolaDown':
-        mod = new patternMath(speed, patternLength)
+        mod = new patternMath(10, patternLength)
         mod.setFunction('parabolaDown')
-        this.beginRotation(speed, mod, alternating, clockwise)
-        break
-      case 'wavy':
-        mod = new patternMath(speed, patternLength, clockwise)
-        mod.setFunction('wavy')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
       case 'random':
-        mod = new patternMath(speed)
+        mod = new patternMath(20)
         mod.setFunction('random')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
       case 'uniform':
-        mod = new patternMath(speed)
+        mod = new patternMath(25)
         mod.setFunction('uniform')
-        this.beginRotation(speed, mod, alternating, clockwise)
+        this.beginRotation(mod, alternating, clockwise)
         break
     }
   }
-  beginRotation(speed, speedModObject, alternating, startClockwise) {
+  beginRotation(speedModObject, alternating, startClockwise) {
     let orbSelections = Array.from(new Array(this.orbitals.length), (x, i) => this.orbitals[i].orbitalContainer),
-        speedMod = speed,
-        clockwise = startClockwise
+        clockwise = startClockwise,
+        speedMod
     for (let orb of orbSelections) {
       speedMod = speedModObject.mainFunction()
       svgUtils.rotateInPlace({selection: orb, center: this.center, speed: speedMod, isChild: true, clockwise: clockwise})
