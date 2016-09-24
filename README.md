@@ -5,7 +5,7 @@ customizable.
 ## Features
 * Responsive
 * Built with d3.js in ES6
-* Easily modified nucleus, orbital, and electron radii
+* Easily modified nucleus, orbital, and electron radii, color
 * Animated initialization
 * Orbital rotational patterns:
   * `linearPositive`
@@ -17,8 +17,8 @@ customizable.
   * `random`
   * `uniform`
 * Orbital patterns can be entirely clockwise, counter-clockwise, or alternating
-* "Address" system provides distinct ID's for each component of the Atom (Helpful for animation and styling)
-* Wikipedia summary and links provided for each Atom object
+* Dynamic "address" system provides distinct ID's for each component of the Atom (Helpful for animation and styling. See: [Properties](#properties))
+* Wikipedia summary and links provided for each Atom object (See: [Properties](#properties))
 * Electron configurations provided by https://en.wikipedia.org/wiki/Electron_shell
 
 ## Installation
@@ -33,15 +33,16 @@ Include this script element in your mark-up:
 
 along with a div to contain your atom.
 ```html
-<div id="bohr-model-container" class='atom-row'></div>`
+<div id="bohr-model-container"></div>`
 ```
 
 **You MUST ensure your div has a width and height**
 
 
-These atoms are restricted to those which exist and have been discovered therefore:
-
+The atoms provided are restricted to those which exist and have been discovered, therefore:
 > 1 <= numElectrons <= 118
+
+(passing anything < 1 or > 118 will result in either Hydrogen or Ununoctium)
 
 At minimum numElectrons, containerId, and a unique idNumber must be provided.
 
@@ -55,7 +56,6 @@ var atomicConfig = {
 
 var myAtom = new Atom(atomicConfig)
 ```
-Provided a div with width and height, the atom will situate itself dead center and be responsive throughout.
 
 ---
 
@@ -120,10 +120,25 @@ Rotates orbitals with given configuration
 ```javascript
 myAtom.destroy()
 ```
-Destroys the <g> element housing the Atom, but NOT the parent <svg>
+Destroys the `<g>` element housing the Atom but, NOT the parent `<svg>`
 
 ```javascript
 var rotateConfig = {speed: 50, clockwise: true}
-myAtom.rotate(rotateConfig))
+myAtom.rotate(rotateConfig)
 ```
 Rotates entire atom with given configuration
+
+## Properties
+```javascript
+// Wikipedia data
+myAtom.elementName
+myAtom.wikiSummary
+myAtom.wikiUrl
+myAtom.electronConfig
+myAtom.atomicSymbol
+// Identifying Atoms and their components
+myAtom.atomId // ex: atom-0
+var firstOrb = myAtom.orbitals[0] // d3 selection
+firstOrb.orbitalId // ex: atom-0-orbital-0
+firstOrb.electrons[0].eId // ex: atom-0-oribital-0-electron-0
+```
