@@ -1,9 +1,19 @@
 import * as svgUtils from './utils/svgUtils'
 import patternMath from './utils/patternMath'
 import Orbital from './orbital'
-import atomicData from './atomic_data.json'
 
-export default class {
+require('./css/main.css')
+
+import atomicData from './atomic_data.json'
+const d3 = require('d3')
+import $ from 'jquery'
+import jQuery from 'jquery'
+
+window.$ = $
+window.jQuery = jQuery
+window.d3 = d3
+
+export default class Atom {
   constructor({
                 containerId,
                 numElectrons,
@@ -18,8 +28,8 @@ export default class {
                 orbitalRotationConfig,
                 symbolOffset=8,
                 drawSymbol=true,
-                drawLabel=false,
               }) {
+    this._name = 'Atom'
     this.containerEle = d3.select(containerId)
     this.animationTime = animationTime
     this.center = {x: $(containerId).width()/2, y: $(containerId).height()/2}
@@ -37,17 +47,19 @@ export default class {
     this.drawOrbitals()
     this.symbolOffset = symbolOffset
     if(drawSymbol) { this.drawAtomicSymbol()}
-    if(drawLabel) {this.drawAtomName()}
     if(rotateConfig) {this.rotate(rotateConfig)}
     if(orbitalRotationConfig) {this.rotateOrbitals(orbitalRotationConfig)}
+    d3.select(window).on('resize', this.resize)
   }
   createSvgContainer(idNumber) {
-    return this.containerEle.append("svg")
-                              .attr("width", this.center.x * 2)
-                              .attr("height", this.center.y * 2)
-                              .attr("x", this.center.x)
-                              .attr("y", this.center.y)
-                              .attr("id", 'bohr-model-svg-container-' + idNumber)
+    return this.containerEle
+                  .append("div")
+                    .classed("svg-container", true)
+                    .append("svg")
+                    .attr("preserveAspectRatio", "xMinYMin meet")
+                    .attr("viewBox", `0 0 ${this.center.x * 2} ${this.center.y * 2}`)
+                    .classed("svg-content-responsive", true)
+                    .attr("id", 'bohr-model-svg-container-' + idNumber)
   }
   createAtomContainer(idNumber) {
     this.atomId = 'atom-' + idNumber
@@ -106,14 +118,6 @@ export default class {
                         .text(this.atomicSymbol)
                         .style("fill", "white")
   }
-  drawAtomName() {
-    this.atomContainer.append("text")
-                        .attr("x", this.center.x)
-                        .attr("y", this.center.y*2 - 4)
-                        .attr("text-anchor", "middle")
-                        .attr("class", "bohr-element-name")
-                        .text(this.elementName)
-  }
   setNumElectrons(num) {
     this.destroy()
     this.numElectrons = num
@@ -159,46 +163,71 @@ export default class {
         preset = pattern.preset,
         clockwise = pattern.clockwise,
         patternLength = this.orbitals.length,
-        mod
+        mod,
+        s
     // TODO: Let speed modifier be meaningful
     switch (preset) {
       case 'linearPositive':
-        mod = new patternMath(15, patternLength)
+        s = speed ?
+            speed :
+            15
+        mod = new patternMath(s, patternLength)
         mod.setFunction('linearPositive')
         this.beginRotation(mod, alternating, clockwise)
         break
       case 'linearNegative':
-        mod = new patternMath(15, patternLength)
+        s = speed ?
+            speed :
+            15
+        mod = new patternMath(s, patternLength)
         mod.setFunction('linearNegative')
         this.beginRotation(mod, alternating, clockwise)
         break
       case 'cubedPositive':
-        mod = new patternMath(15, patternLength)
+        s = speed ?
+            speed :
+            15
+        mod = new patternMath(s, patternLength)
         mod.setFunction('cubedPositive')
         this.beginRotation(mod, alternating, clockwise)
         break
       case 'cubedNegative':
-        mod = new patternMath(35, patternLength)
+        s = speed ?
+            speed :
+            35
+        mod = new patternMath(s, patternLength)
         mod.setFunction('cubedNegative')
         this.beginRotation(mod, alternating, clockwise)
         break
       case 'parabolaUp':
-        mod = new patternMath(10, patternLength)
+        s = speed ?
+            speed :
+            10
+        mod = new patternMath(s, patternLength)
         mod.setFunction('parabolaUp')
         this.beginRotation(mod, alternating, clockwise)
         break
       case 'parabolaDown':
-        mod = new patternMath(10, patternLength)
+        s = speed ?
+            speed :
+            10
+        mod = new patternMath(s, patternLength)
         mod.setFunction('parabolaDown')
         this.beginRotation(mod, alternating, clockwise)
         break
       case 'random':
-        mod = new patternMath(20)
+        s = speed ?
+            speed :
+            20
+        mod = new patternMath(s)
         mod.setFunction('random')
         this.beginRotation(mod, alternating, clockwise)
         break
       case 'uniform':
-        mod = new patternMath(25)
+        s = speed ?
+            speed :
+            25
+        mod = new patternMath(s)
         mod.setFunction('uniform')
         this.beginRotation(mod, alternating, clockwise)
         break

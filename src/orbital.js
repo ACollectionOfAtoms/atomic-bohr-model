@@ -1,5 +1,3 @@
-// This should provide an ``` orbital ``` object, which is a <g> element housing
-// the electron path, it's length, and the electrons themselves
 import Electron from './electron'
 import * as svgUtils from './utils/svgUtils'
 
@@ -40,7 +38,7 @@ export default class {
     this.ePath = d3.select('#' + this.pathId).node()
   }
   drawElectrons() {
-    // this method should add electrons to the correct coordinates (distance on path)
+    // this method adds electrons to the correct coordinates (distance on path)
     // wrt number of electrons.
     // To keep electrons equi-distant, (i)*(L/N) is applied, where:
     // L = total length of path
