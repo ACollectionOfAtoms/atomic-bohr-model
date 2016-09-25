@@ -2,12 +2,13 @@ import Electron from './electron'
 import * as svgUtils from './utils/svgUtils'
 
 export default class {
-  constructor(atom, radius, numElectrons, electronRadius, electronColor, atomId, idNumber, animationTime) {
+  constructor(atom, radius, color, numElectrons, electronRadius, electronColor, atomId, idNumber, animationTime) {
     this.atom = atom
     this.radius = radius
     this.numElectrons = numElectrons
     this.electronRadius = electronRadius
     this.electronColor = electronColor
+    this.pathColor = color
     this.animationTime = animationTime
     this.orbitalId = atomId + '-orbital-' + idNumber
 
@@ -35,6 +36,7 @@ export default class {
                                     .attr("class", "bohr-electron-path")
                                     .attr("id", this.pathId)
                                     .attr("d", ePathDescription)
+                                    .attr("stroke", this.pathColor)
     this.ePath = d3.select('#' + this.pathId).node()
   }
   drawElectrons() {

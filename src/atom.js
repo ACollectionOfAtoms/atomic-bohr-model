@@ -21,6 +21,7 @@ export default class Atom {
                 nucleusColor,
                 electronRadius,
                 electronColor,
+                orbitalColor,
                 orbitalSpacing,
                 idNumber,
                 animationTime,
@@ -38,6 +39,7 @@ export default class Atom {
     this.nucleusRadius = nucleusRadius
     this.electronRadius = electronRadius
     this.electronColor = electronColor
+    this.orbitalColor = orbitalColor
     this.svgContainer = this.createSvgContainer(idNumber)
     this.atomContainer = this.createAtomContainer(idNumber)
     this.numElectrons = this.ensureAtomicExistence(numElectrons) // Restrict to elements that exist
@@ -102,7 +104,7 @@ export default class Atom {
         speed = 55
     for (let eNumber of this.electronConfig) {
       // TODO: expose animation time here to allow for different times per orbital
-      let orbital = new Orbital(this, spacing, eNumber, this.electronRadius, this.electronColor, this.atomId, orbIdNumber, this.animationTime)
+      let orbital = new Orbital(this, spacing, this.orbitalColor, eNumber, this.electronRadius, this.electronColor, this.atomId, orbIdNumber, this.animationTime)
       this.orbitals.push(orbital)
       spacing += this.orbitalSpacing
       orbIdNumber += 1
