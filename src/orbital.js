@@ -2,13 +2,14 @@ import Electron from './electron'
 import * as svgUtils from './utils/svgUtils'
 
 export default class {
-  constructor(atom, radius, color, numElectrons, electronRadius, electronColor, atomId, idNumber, animationTime) {
+  constructor(atom, radius, color, width, numElectrons, electronRadius, electronColor, atomId, idNumber, animationTime) {
     this.atom = atom
     this.radius = radius
     this.numElectrons = numElectrons
     this.electronRadius = electronRadius
     this.electronColor = electronColor
-    this.pathColor = color
+    this.pathWidth = width ? width : 1
+    this.pathColor = color ? color : 'black'
     this.animationTime = animationTime
     this.orbitalId = atomId + '-orbital-' + idNumber
 
@@ -37,6 +38,7 @@ export default class {
                                     .attr("id", this.pathId)
                                     .attr("d", ePathDescription)
                                     .attr("stroke", this.pathColor)
+                                    .attr("stroke-width", this.pathWidth)
     this.ePath = d3.select('#' + this.pathId).node()
   }
   drawElectrons() {
