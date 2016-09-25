@@ -8,7 +8,7 @@ export default class {
     this.numElectrons = numElectrons
     this.electronRadius = electronRadius
     this.electronColor = electronColor
-    this.pathWidth = width ? width : 1
+    this.pathWidth = width ? width : 0.1
     this.pathColor = color ? color : 'black'
     this.animationTime = animationTime
     this.orbitalId = atomId + '-orbital-' + idNumber
