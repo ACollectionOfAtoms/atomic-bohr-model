@@ -70,6 +70,8 @@ var myAtom = new Atom({
   electronRadius: 3, // Default value is 3
   electronColor: 'blue', // See nucleusColor
   orbitalSpacing: 10, // If not specified will be a 1/3rd of the nucleusRadius
+  orbitalWidth: 1, // width of orbital paths, default is 0.1
+  orbitalColor: 'black', // see electronColor
   idNumber: 1, // Required int to provide unique Atoms
   animationTime: 1300, // Time in milliseconds for initial electron animation
   rotateConfig: {speed: 50, clockwise: true}, // Rotates entire Atom with given params
