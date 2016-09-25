@@ -54,11 +54,11 @@ export default class Atom {
   createSvgContainer(idNumber) {
     return this.containerEle
                   .append("div")
-                    .classed("svg-container", true)
+                    .classed("bohr-svg-container", true)
                     .append("svg")
                     .attr("preserveAspectRatio", "xMinYMin meet")
                     .attr("viewBox", `0 0 ${this.center.x * 2} ${this.center.y * 2}`)
-                    .classed("svg-content-responsive", true)
+                    .classed("bohr-svg-content-responsive", true)
                     .attr("id", 'bohr-model-svg-container-' + idNumber)
   }
   createAtomContainer(idNumber) {
@@ -157,7 +157,6 @@ export default class Atom {
     svgUtils.rotateInPlace({selection: this.atomContainer, center: this.center, speed: speed, clockwise: clockwise})
   }
   rotateOrbitals({speed, pattern}) {
-    // TODO add clockwise as pattern param
     let alternating = pattern.alternating,
         formula = pattern.formula,
         preset = pattern.preset,

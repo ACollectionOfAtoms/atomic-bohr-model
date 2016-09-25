@@ -1,5 +1,5 @@
 /* Required for Bohr Model*/
-.svg-container {
+.bohr-svg-container {
     display: inline-block;
     position: relative;
     width: 100%;
@@ -7,7 +7,7 @@
     vertical-align: top;
     overflow: hidden;
 }
-.svg-content-responsive {
+.bohr-svg-content-responsive {
     display: inline-block;
     position: absolute;
     top: 10px;
