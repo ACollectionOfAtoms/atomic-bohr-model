@@ -1,6 +1,6 @@
 {
   "name": "atomic-bohr-model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modular atomic bohr model created with d3.js",
   "main": "./dist/build.js",
   "scripts": {
