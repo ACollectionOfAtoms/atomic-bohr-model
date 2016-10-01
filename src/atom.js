@@ -38,6 +38,7 @@ export default class Atom {
     this.idNumber = idNumber
     this.containerId = containerId
     this.nucleusRadius = nucleusRadius
+    this.nucleusColor = nucleusColor
     this.electronRadius = electronRadius
     this.electronColor = electronColor
     this.orbitalColor = orbitalColor
@@ -126,7 +127,7 @@ export default class Atom {
     this.destroy()
     this.numElectrons = num
     this.atomContainer = this.createAtomContainer(this.idNumber)
-    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius)
+    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius, this.nucleusColor)
     this.setAtomicConfig()
     this.drawOrbitals()
     this.drawAtomicSymbol()
@@ -136,7 +137,7 @@ export default class Atom {
     let numElectrons = this.numElectrons + num
     this.numElectrons = this.ensureAtomicExistence(numElectrons)
     this.atomContainer = this.createAtomContainer(this.idNumber)
-    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius)
+    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius, this.nucleusColor)
     this.setAtomicConfig()
     this.drawOrbitals()
     this.drawAtomicSymbol()
@@ -146,7 +147,7 @@ export default class Atom {
     let numElectrons = this.numElectrons - num
     this.numElectrons = this.ensureAtomicExistence(numElectrons)
     this.atomContainer = this.createAtomContainer(this.idNumber)
-    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius)
+    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius, this.nucleusColor)
     this.setAtomicConfig()
     this.drawOrbitals()
     this.drawAtomicSymbol()
