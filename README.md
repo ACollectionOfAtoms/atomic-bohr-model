@@ -1,6 +1,9 @@
 # atomic-bohr-model
 This d3 powered visualization package provides atomic animations which are highly
 customizable.
+An example app using this package can be found here:
+https://acollectionofatoms.github.io/atomic-bohr-model-examples/index.html
+
 
 ## Features
 * Responsive
