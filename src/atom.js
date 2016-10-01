@@ -130,7 +130,6 @@ export default class Atom {
     this.setAtomicConfig()
     this.drawOrbitals()
     this.drawAtomicSymbol()
-    this.drawAtomName()
   }
   addElectrons(num) {
     this.destroy()
@@ -141,7 +140,6 @@ export default class Atom {
     this.setAtomicConfig()
     this.drawOrbitals()
     this.drawAtomicSymbol()
-    this.drawAtomName()
   }
   removeElectrons(num) {
     this.destroy()
@@ -152,7 +150,6 @@ export default class Atom {
     this.setAtomicConfig()
     this.drawOrbitals()
     this.drawAtomicSymbol()
-    this.drawAtomName()
   }
   ensureAtomicExistence(num) {
     return Math.min(Math.max(parseInt(num), 1), 118)
