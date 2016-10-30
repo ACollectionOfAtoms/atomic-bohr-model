@@ -125,27 +125,23 @@ export default class Atom {
   }
   setNumElectrons(num) {
     this.destroy()
-    this.numElectrons = num
-    this.atomContainer = this.createAtomContainer(this.idNumber)
-    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius, this.nucleusColor)
-    this.setAtomicConfig()
-    this.drawOrbitals()
-    this.drawAtomicSymbol()
+    let numElectrons = num
+    this.numElectrons = this.ensureAtomicExistence(numElectrons)
+    this._redrawAtom()
   }
   addElectrons(num) {
     this.destroy()
     let numElectrons = this.numElectrons + num
     this.numElectrons = this.ensureAtomicExistence(numElectrons)
-    this.atomContainer = this.createAtomContainer(this.idNumber)
-    this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius, this.nucleusColor)
-    this.setAtomicConfig()
-    this.drawOrbitals()
-    this.drawAtomicSymbol()
+    this._redrawAtom()
   }
   removeElectrons(num) {
     this.destroy()
     let numElectrons = this.numElectrons - num
     this.numElectrons = this.ensureAtomicExistence(numElectrons)
+    this._redrawAtom()
+  }
+  _redrawAtom() {
     this.atomContainer = this.createAtomContainer(this.idNumber)
     this.nucleus = this.createNucleus(this.containerId, this.nucleusRadius, this.nucleusColor)
     this.setAtomicConfig()
