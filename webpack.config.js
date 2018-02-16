@@ -56,5 +56,8 @@ module.exports = {
     root: ['.'],
     extensions: ['', '.js']
   },
-  plugins: plugins
+  plugins: plugins,
+  externals:[{
+    xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}'
+  }]
 };
